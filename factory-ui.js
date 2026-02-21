@@ -16,18 +16,20 @@ function initFactoryTab() {
 // ── Quota Display ───────────────────────────────────────────
 function updateQuotaDisplay() {
   if (!window.KivosyFactory) return;
+  
+  // RateLimiter에서 사용량만 가져옴 (remaining은 더 이상 표시 안 함)
   const { RateLimiter } = window.KivosyFactory;
   const usage = RateLimiter.getUsage();
   const used = usage.count;
-  const remaining = RateLimiter.remaining();
 
+  // quota-used 요소가 있으면 업데이트 (헤더용)
   const usedEl = document.getElementById('quota-used');
-  const fillEl = document.getElementById('quota-fill');
-  const badgeEl = document.getElementById('factory-remaining-badge');
-
   if (usedEl) usedEl.textContent = used;
-  if (fillEl) fillEl.style.width = `${(used / 10) * 100}%`;
-  if (badgeEl) badgeEl.textContent = remaining;
+  
+  // daily-usage 요소가 있으면 업데이트 (헤더용)
+  const dailyUsageEl = document.getElementById('daily-usage');
+  if (dailyUsageEl) dailyUsageEl.textContent = used;
+  
 }
 
 // ── Prompt Helpers ─────────────────────────────────────────

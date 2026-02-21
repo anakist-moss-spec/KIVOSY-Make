@@ -389,3 +389,18 @@ window.KivosyFactory = {
   RateLimiter,
   KivosySecurityCore,
 };
+
+// ── 사용량 표시용 헬퍼 함수 (하단에 추가)
+function getTodayUsage() {
+    return RateLimiter.getUsage().count;
+}
+
+// 전역 export 부분 수정
+window.KivosyFactory = {
+  createAppFromPrompt,
+  openGeneratedApp,
+  AppStorage,
+  RateLimiter,
+  KivosySecurityCore,
+  getTodayUsage  // ✅ 추가
+};
