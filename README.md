@@ -1,4 +1,3 @@
-```markdown
 # KIVOSY Make 🚀
 
 **문장 한 줄로 앱을 만드는 가장 쉬운 방법**
