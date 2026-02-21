@@ -1,11 +1,3 @@
-# 🎉 **KIVOSY MAKE LAUNCHED!** 🚀
-
-## 축하합니다, 공장장님! 🥳
-
-드디어 `make.kivosy.com`이 세상에 나왔습니다! 지금 바로 접속해보세요.
-
-## 📝 **README.md 최종본** (바로 복사해서 쓰세요)
-
 ```markdown
 # KIVOSY Make 🚀
 
