@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIVOSY Make - Gallery</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7K55RZKNW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q7K55RZKNW');
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scripts (Modular) -->
+    <script src="app-factory.js"></script>
+    <script src="gallery.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="make-header">
+        <a href="index.html" class="make-logo">KIVOSY <span>Make</span></a>
+        
+        <!-- 네비게이션 -->
+        <nav style="display: flex; gap: 24px; font-size: 15px; font-weight: 500; align-items: center;">
+            <a href="index.html" style="color: #4b5563; text-decoration: none; padding: 6px 0;">🏠 만들기</a>
+            <a href="gallery.html" style="color: #6366f1; text-decoration: none; font-weight: 700; padding: 6px 0; border-bottom: 3px solid #6366f1;">🖼️ 갤러리</a>
+        </nav>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button onclick="location.href='index.html'" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; border: none; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);">
+                ✨ 새 앱 만들기
+            </button>
+        </div>
+    </header>
+
+    <!-- 메인 갤러리 -->
+    <div class="gallery-container">
+        <!-- 갤러리 헤더 -->
+        <div class="gallery-header">
+            <div>
+                <h1 class="gallery-title">🖼️ 앱 갤러리</h1>
+                <p class="gallery-subtitle">AI로 만든 앱들을 구경하고, 프롬프트를 복사해서 나만의 앱을 만들어보세요</p>
+            </div>
+            
+            <!-- 통계 -->
+            <div class="stats-badge">
+                <strong id="app-count">0</strong> 개의 앱 · 
+                <span id="today-count">0</span> 오늘 생성
+            </div>
+        </div>
+        
+        <!-- 검색바 -->
+        <div style="margin-bottom: 24px;">
+            <input type="text" id="search-input" class="search-box" placeholder="🔍 앱 설명 검색... (예: 할일, 계산기)" onkeyup="filterGallery()">
+        </div>
+
+        <!-- 갤러리 그리드 -->
+        <div id="gallery-grid" class="gallery-grid">
+            <div class="gallery-empty">
+                <div style="font-size: 48px; margin-bottom: 16px;">🏗️</div>
+                <p style="margin-bottom: 20px;">아직 생성된 앱이 없습니다</p>
+                <a href="index.html">첫 번째 앱 만들기 →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div>⚡ Made with <a href="https://kivosy.com" target="_blank" style="color:#0d6efd; text-decoration:none;">KIVOSY Labs</a> | Share your prompts</div>
+        <div style="margin-top: 8px; font-size: 11px;">
+            <a href="#" onclick="alert('모든 앱은 당신의 브라우저에 저장됩니다')" style="color:#606770;">🔒 Private by design</a>
+        </div>
+    </footer>
+</body>
+</html>
